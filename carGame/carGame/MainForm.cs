@@ -15,18 +15,19 @@ namespace carGame
 		{
 			InitializeComponent();
 			roadObjects[0] = new RoadScrolling();
-			///this.Controls.Add(roadObjects[0]);
 			roadObjects[1] = new RoadScrolling();
-			//this.Controls.Add(roadObjects[1]);
-			//this.Controls.Add(roadObjects[0]);
-			roadObjects[0].position = new Point(0, 0);
-			//this.Controls.Add();
+			this.Controls.Add(roadObjects[0].roadPicture);
+			this.Controls.Add(roadObjects[1].roadPicture);
+			roadObjects[0].roadPicture.Location = new Point(0, 0);
+			roadObjects[1].roadPicture.Location = new Point(0, -680);
+			roadObjects[0].position = roadObjects[0].roadPicture.Location;
+			roadObjects[1].position = roadObjects[1].roadPicture.Location;
 		}
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-			roadObjects[0].MakeScroll(pictureBox1);
-			roadObjects[1].MakeScroll(pictureBox2);
+			roadObjects[0].MakeScroll();
+			roadObjects[1].MakeScroll();
 		}
 
 		public void AddToControl(PictureBox obj)
