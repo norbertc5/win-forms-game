@@ -22,6 +22,11 @@ namespace carGame
 			roadObjects[1].roadPicture.Location = new Point(0, -680);
 			roadObjects[0].position = roadObjects[0].roadPicture.Location;
 			roadObjects[1].position = roadObjects[1].roadPicture.Location;
+
+			// car is transparent
+			roadObjects[0].roadPicture.Controls.Add(pictureBox1);
+			pictureBox1.Location = new Point(0, 0);
+			pictureBox1.BackColor = Color.Transparent;
 		}
 
         private void Timer_Tick(object sender, EventArgs e)
